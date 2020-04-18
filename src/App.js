@@ -1,7 +1,10 @@
 import React from 'react';
+import { ContainerNes } from './components/ContainerNes';
 
 const App = () => (
-  <h1>Olá suas pesssoas lindas do Chat!!!</h1>
+  <ContainerNes>
+    <h1>Coiso</h1>
+  </ContainerNes>
 );
 
 export default App;
