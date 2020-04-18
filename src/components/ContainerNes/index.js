@@ -10,7 +10,6 @@ export const ContainerNes = styled.section`
   color: var(--color-gray-lighter);
   font-size: var(--size-medium);
   padding: calc(var(--border-width) + var(--gap-small) * 2);
-  height: 80px;
 
   &::before {
     content: '';
