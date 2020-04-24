@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import _containers from '../../styles/tools/_containers';
 
-export const ContainerNes = styled.section`
+const ContainerNes = styled.section`
   --border-width: 4px;
   ${_containers('internal')};
   box-sizing: border-box;
@@ -23,3 +23,5 @@ export const ContainerNes = styled.section`
     border: var(--border-width) solid var(--color-gray-lighter);
   }
 `;
+
+export default ContainerNes;

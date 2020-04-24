@@ -1,10 +1,6 @@
 import React from 'react';
-import { ContainerNes } from './components/ContainerNes';
+import HeaderDev from './containers/HeaderDev';
 
-const App = () => (
-  <ContainerNes>
-    <h1>Coiso</h1>
-  </ContainerNes>
-);
+const App = () => <HeaderDev />;
 
 export default App;
