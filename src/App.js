@@ -1,6 +1,7 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import HeaderDev from './containers/HeaderDev';
+import Routes from './Routes';
 
-const App = () => <HeaderDev />;
+const App = () => <Routes />;
 
 export default App;

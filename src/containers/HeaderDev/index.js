@@ -1,11 +1,11 @@
 import React from 'react';
-import ContainerNes from '../../components/ContainerNes';
 import LogoDev from '../../components/LogoDev';
+import Header from './styles';
 
 const HeaderDev = () => (
-  <ContainerNes>
+  <Header as="header">
     <LogoDev />
-  </ContainerNes>
+  </Header>
 );
 
 export default HeaderDev;

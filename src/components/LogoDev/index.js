@@ -1,6 +1,11 @@
-import styled from 'styled-components';
-import logo from '../../img/MarcoBrunoDev.jpg'
+import React from 'react';
+import { Wrapper, Logo, Title } from './styles';
 
-const LogoDev = styled.img.attrs({ src: logo })``
+const LogoDev = () => (
+  <Wrapper>
+    <Logo />
+    <Title>MarcoBrunoDev</Title>
+  </Wrapper>
+);
 
-export default LogoDev
+export default LogoDev;
