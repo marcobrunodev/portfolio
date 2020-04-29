@@ -1,10 +1,9 @@
 import React from 'react';
-import HeaderDev from '../../containers/HeaderDev';
 import TitleNes from '../../components/TitleNes';
 import InfosLive from '../../containers/InfosLive';
-import FooterDev from '../../containers/FooterDev';
 import photoLive from '../../img/live-28-04-2020.png';
 import photoGuest from '../../img/marcos-castro.png';
+import Template from '../Template';
 
 const live = {
   title: '#05 Curso de FrontEnd com HTML, CSS e JavaScript',
@@ -27,8 +26,7 @@ const LiveDetails = () => {
   const { title, goals, photo, altPhoto, day, hour, description, guest } = live;
 
   return (
-    <>
-      <HeaderDev />
+    <Template>
       <TitleNes>{title}</TitleNes>
 
       <InfosLive
@@ -40,9 +38,7 @@ const LiveDetails = () => {
         description={description}
         guest={guest}
       />
-
-      <FooterDev />
-    </>
+    </Template>
   );
 };
 

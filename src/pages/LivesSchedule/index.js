@@ -1,13 +1,12 @@
 import React from 'react';
-import HeaderDev from '../../containers/HeaderDev';
 import ContainerDev from '../../containers/ContainerDev';
 import TitleNes from '../../components/TitleNes';
 import TextNes from '../../components/TextNes';
 import ActionNes from '../../components/ActionNes';
 import CardDay from '../../containers/CardDay';
 import WrapperCard from '../../containers/WrapperCard';
-import FooterDev from '../../containers/FooterDev';
 import cursoFrontEnd from '../../img/cursoFrontEnd.png';
+import Template from '../Template';
 
 const lives = [
   {
@@ -43,8 +42,7 @@ const lives = [
 ];
 
 const LivesSchedule = () => (
-  <>
-    <HeaderDev />
+  <Template>
     <ContainerDev>
       <TitleNes>Agenda das Lives</TitleNes>
       <TextNes>
@@ -60,9 +58,7 @@ const LivesSchedule = () => (
         ))}
       </WrapperCard>
     </ContainerDev>
-
-    <FooterDev />
-  </>
+  </Template>
 );
 
 export default LivesSchedule;
