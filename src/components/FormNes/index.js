@@ -1,18 +1,16 @@
-import styled from 'styled-components';
-import ContainerNes from '../ContainerNes';
-import { Label } from '../FieldNes/styles';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Form } from './styles';
 
-const FormNes = styled(ContainerNes)`
-  padding: var(--gap-big);
-`;
+const FormNes = ({ children, onSubmit }) => (
+  <Form as="form" onSubmit={onSubmit}>
+    {children}
+  </Form>
+);
 
-const Half = styled.div`
-  display: flex;
-  justify-content: space-between;
+FormNes.propTypes = {
+  children: PropTypes.element.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+};
 
-  & > ${Label} {
-    width: 49%;
-  }
-`;
-
-export { FormNes, Half };
+export default FormNes;

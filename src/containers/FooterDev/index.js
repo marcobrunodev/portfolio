@@ -25,7 +25,7 @@ const FooterDev = () => (
   <Footer as="footer">
     <Navigation>
       {medias.map(({ href, what }) => (
-        <SocialMedia href={href} what={what} />
+        <SocialMedia key={what} href={href} what={what} />
       ))}
     </Navigation>
 

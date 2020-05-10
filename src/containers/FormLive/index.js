@@ -1,7 +1,7 @@
 import React from 'react';
-import { FormNes, Half } from '../../components/FormNes';
+import FormNes from '../../components/FormNes';
+import { Half } from '../../components/FormNes/styles';
 import FieldNes from '../../components/FieldNes';
-import TextareaNes from '../../components/TextareaNes';
 import ButtonNes from '../../components/ButtonNes';
 import useValidation from '../../libs/validation/useValidation';
 import validation from './validation';
@@ -16,12 +16,13 @@ const FormLive = () => {
   );
 
   return (
-    <FormNes noValidate onSubmit={handleSubmit}>
+    <FormNes onSubmit={handleSubmit}>
       <FieldNes
         content="Título curto:"
         name="titleShort"
         value={value.titleShort}
         onChange={handleChange}
+        msgError={errors.titleShort}
       />
 
       {/* <FieldNes content="Título" name="title" />
@@ -40,7 +41,7 @@ const FormLive = () => {
       <TextareaNes content="Objetivos" placeholder="Cada objetivo separado por ;" name="goals" />
       <TextareaNes content="Descrição" name="description" /> */}
 
-      <ButtonNes>Enviar</ButtonNes>
+      <ButtonNes as="button">Enviar</ButtonNes>
     </FormNes>
   );
 };

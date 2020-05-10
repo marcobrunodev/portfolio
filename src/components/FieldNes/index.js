@@ -3,17 +3,18 @@ import PropTypes from 'prop-types';
 import { Label, Content, Input } from './styles';
 import MsgError from '../MsgError';
 
-const FieldNes = ({ content, type, name, placeholder, onChange }) => (
+const FieldNes = ({ content, type, name, placeholder, onChange, msgError }) => (
   <Label>
     <Content>{content}</Content>
     <Input type={type} name={name} placeholder={placeholder} onChange={onChange} />
-    <MsgError>Error</MsgError>
+    <MsgError>{msgError}</MsgError>
   </Label>
 );
 
 FieldNes.defaultProps = {
   type: 'text',
   placeholder: '',
+  msgError: '',
 };
 
 FieldNes.propTypes = {
@@ -22,6 +23,7 @@ FieldNes.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+  msgError: PropTypes.string,
 };
 
 export default FieldNes;
