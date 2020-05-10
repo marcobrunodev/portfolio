@@ -18,8 +18,6 @@ function useValidation(validation = false, callback, ...values) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    console.log('Galera feliz!!!');
-
     setErrors(validation instanceof Object ? validation(value) : {});
     setIsSubmitting(true);
   }

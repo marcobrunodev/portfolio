@@ -12,6 +12,7 @@ const ButtonNes = styled.a`
   color: var(--color-gray-lighter);
   background-color: var(--color-primary-medium);
   text-decoration: none;
+  border: none;
 
   ${({ twitch }) =>
     twitch &&

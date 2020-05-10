@@ -1,11 +1,16 @@
 import styled from 'styled-components';
+import MsgError from '../MsgError';
 
 const Label = styled.label`
+  position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: var(--gap-big);
 
-  &:not(:last-child) {
-    margin-bottom: var(--gap-big);
+  & > ${MsgError} {
+    position: absolute;
+    bottom: 0;
+    transform: translateY(100%);
   }
 `;
 
