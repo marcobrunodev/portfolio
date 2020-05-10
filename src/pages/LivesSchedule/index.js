@@ -1,4 +1,5 @@
 import React from 'react';
+import Template from '../Template';
 import ContainerDev from '../../containers/ContainerDev';
 import TitleNes from '../../components/TitleNes';
 import TextNes from '../../components/TextNes';
@@ -6,7 +7,7 @@ import ActionNes from '../../components/ActionNes';
 import CardDay from '../../containers/CardDay';
 import WrapperCard from '../../containers/WrapperCard';
 import cursoFrontEnd from '../../img/cursoFrontEnd.png';
-import Template from '../Template';
+import PlusButton from '../../components/PlusButton';
 
 const lives = [
   {
@@ -57,6 +58,8 @@ const LivesSchedule = () => (
           <CardDay uiid={uiid} title={title} date={date} photo={photo} />
         ))}
       </WrapperCard>
+
+      <PlusButton />
     </ContainerDev>
   </Template>
 );
