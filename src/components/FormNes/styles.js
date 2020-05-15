@@ -7,11 +7,13 @@ const Form = styled(ContainerNes)`
 `;
 
 const Half = styled.div`
-  display: flex;
-  justify-content: space-between;
+  @media (min-width: 700px) {
+    display: flex;
+    justify-content: space-between;
 
-  & > ${Label} {
-    width: 49%;
+    & > ${Label} {
+      width: 49%;
+    }
   }
 `;
 

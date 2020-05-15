@@ -55,7 +55,7 @@ const LivesSchedule = () => (
 
       <WrapperCard>
         {lives.map(({ uiid, title, date, photo }) => (
-          <CardDay uiid={uiid} title={title} date={date} photo={photo} />
+          <CardDay uiid={uiid} key={uiid} title={title} date={date} photo={photo} />
         ))}
       </WrapperCard>
 

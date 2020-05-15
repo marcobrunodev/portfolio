@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const ButtonNes = styled.a`
+const ButtonNes = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +14,7 @@ const ButtonNes = styled.a`
   background-color: var(--color-primary-medium);
   text-decoration: none;
   border: none;
+  font-family: inherit;
 
   ${({ twitch }) =>
     twitch &&

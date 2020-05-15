@@ -6,20 +6,17 @@ import photoGuest from '../../img/marcos-castro.png';
 import Template from '../Template';
 
 const live = {
-  title: '#05 Curso de FrontEnd com HTML, CSS e JavaScript',
-  goals: ['- pseudo-class', '- pseudo-element', '- box-shadow', '- border-radius'],
+  title: 'twitch.tv/marcobrunodev',
+  goals: ['- Clip-path', '- efeitos 3D', '- CSS Generativo'],
   photo: photoLive,
-  altPhoto: 'Live do dia 28/04/2020',
-  day: '28/04/2020',
-  hour: '19hrs até 22hrs',
-  description: `Se você tem dificuldade para usar algumas propridades do CSS3, nessa aula veremos o
-  funcionamento de propriedades e seletores como: pseudo-class, pseudo-element,
-  box-shadow, text-shadow e border-radius. Além do que você pode tirar suas dúvidas ao
-  vivo.`,
-  guest: {
-    name: 'Marcos Castro',
-    photo: photoGuest,
-  },
+  altPhoto: 'Live do dia 12/05/2020',
+  day: '15/05/2020',
+  hour: '10:10 até 12:10',
+  description: `Se está começando seus estudos de #CSS, essa é uma ótima oportunidade de
+  estudar e também criar a sua página pessoal e já ter algo para aprensentar na sua próxima entrevista
+  de emprego. Serão 5 dias de conteúdo feitos pela Vanessa Tonini e a Juliana Amoasei e durante a live
+  vou aprender com elas e fazer os execícios junto com vocês. Chega mais e bora criar um grupo de
+  estudo`,
 };
 
 const LiveDetails = () => {

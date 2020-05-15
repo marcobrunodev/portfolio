@@ -9,6 +9,7 @@ const Size = createGlobalStyle`
     --size-bigger: 34rem;
 
     --size-border: 4rem;
+    --size-header: 50rem;
   }
 `;
 

@@ -10,6 +10,8 @@ const Logo = styled.img.attrs({ src: logo })`
   height: 100%;
   margin-right: var(--gap-small);
 `;
-const Title = styled.figcaption``;
+const Title = styled.figcaption`
+  color: var(--color-gray-lighter);
+`;
 
 export { Wrapper, Logo, Title };

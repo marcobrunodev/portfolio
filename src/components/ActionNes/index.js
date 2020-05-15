@@ -19,7 +19,7 @@ const ActionNes = styled.a`
     transform-origin: bottom center;
     transform: scaleY(0.08);
     z-index: -1;
-    transition: transform 100ms linear;
+    transition: transform 50ms linear;
   }
 
   &:hover {

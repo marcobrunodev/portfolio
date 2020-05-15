@@ -1,10 +1,15 @@
 import React from 'react';
 import LogoDev from '../../components/LogoDev';
-import Header from './styles';
+import { Header, Logo } from './styles';
+import MenuDev from '../MenuDev';
 
 const HeaderDev = () => (
   <Header as="header">
-    <LogoDev />
+    <Logo to="/">
+      <LogoDev />
+    </Logo>
+
+    <MenuDev />
   </Header>
 );
 

@@ -12,6 +12,7 @@ const Base = createGlobalStyle`
   }
 
   body {
+    padding-top: calc(var(--size-header) + var(--gap-medium));
     font-size: var(--size-medium);
     font-family: 'Press Start 2P', cursive;
     min-width: 320px;

@@ -14,7 +14,7 @@ const CardDay = ({ uiid, date, photo, title }) => (
 
     <Menu>
       <ButtonNes share>Compartilhar</ButtonNes>
-      <ButtonNes href={`/lives/${uiid}`}>Detalhes</ButtonNes>
+      <ButtonNes to={`/lives/${uiid}`}>Detalhes</ButtonNes>
     </Menu>
   </Card>
 );
