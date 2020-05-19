@@ -2,7 +2,7 @@ import React from 'react';
 import TitleNes from '../../components/TitleNes';
 import InfosLive from '../../containers/InfosLive';
 import photoLive from '../../img/live-28-04-2020.png';
-import photoGuest from '../../img/marcos-castro.png';
+// import photoGuest from '../../img/marcos-castro.png';
 import Template from '../Template';
 
 const live = {

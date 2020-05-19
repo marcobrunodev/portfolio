@@ -8,8 +8,10 @@ const FormNes = ({ children, onSubmit }) => (
   </Form>
 );
 
+// oneOf([element, arrayOf(element))
+
 FormNes.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
   onSubmit: PropTypes.func.isRequired,
 };
 

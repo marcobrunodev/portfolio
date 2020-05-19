@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import FormNes from '../../components/FormNes';
 import { Half } from '../../components/FormNes/styles';
 import FieldNes from '../../components/FieldNes';
@@ -6,11 +7,11 @@ import TextareaNes from '../../components/TextareaNes';
 import ButtonNes from '../../components/ButtonNes';
 import useValidation from '../../libs/validation/useValidation';
 import validation from './validation';
+import service from '../../services/lives.service';
 
-function newLive() {}
-
-const FormLive = () => {
-  const { value, handleChange, handleSubmit, errors } = useValidation(
+function FormLive() {
+  const history = useHistory();
+  const { values, handleChange, handleSubmit, errors, validationField } = useValidation(
     validation,
     newLive,
     'titleShort',
@@ -24,21 +25,29 @@ const FormLive = () => {
     'description'
   );
 
+  function newLive(live) {
+    history.push('/lives');
+
+    // service.create(live);
+  }
+
   return (
     <FormNes onSubmit={handleSubmit}>
       <FieldNes
         content="Título curto:"
         name="titleShort"
-        value={value.titleShort}
+        value={values.titleShort}
         onChange={handleChange}
+        onBlur={validationField}
         msgError={errors.titleShort}
       />
 
       <FieldNes
         content="Título:"
         name="title"
-        value={value.title}
+        value={values.title}
         onChange={handleChange}
+        onBlur={validationField}
         msgError={errors.title}
       />
 
@@ -46,8 +55,9 @@ const FormLive = () => {
         content="Imagem:"
         name="photo"
         type="file"
-        value={value.photo}
+        value={values.photo}
         onChange={handleChange}
+        onBlur={validationField}
         msgError={errors.photo}
       />
 
@@ -56,16 +66,18 @@ const FormLive = () => {
           content="Data de início:"
           name="startDate"
           type="date"
-          value={value.startDate}
+          value={values.startDate}
           onChange={handleChange}
+          onBlur={validationField}
           msgError={errors.startDate}
         />
         <FieldNes
           content="Horário de início:"
           name="startTime"
           type="time"
-          value={value.startTime}
+          value={values.startTime}
           onChange={handleChange}
+          onBlur={validationField}
           msgError={errors.startTime}
         />
       </Half>
@@ -75,16 +87,18 @@ const FormLive = () => {
           content="Data de fim:"
           name="finishDate"
           type="date"
-          value={value.finishDate}
+          value={values.finishDate}
           onChange={handleChange}
+          onBlur={validationField}
           msgError={errors.finishDate}
         />
         <FieldNes
           content="Horário de fim:"
           name="finishTime"
           type="time"
-          value={value.finishTime}
+          value={values.finishTime}
           onChange={handleChange}
+          onBlur={validationField}
           msgError={errors.finishTime}
         />
       </Half>
@@ -93,22 +107,26 @@ const FormLive = () => {
         content="Objetivos:"
         placeholder="Cada objetivo separado por ;"
         name="goals"
-        value={value.goals}
+        value={values.goals}
         onChange={handleChange}
+        onBlur={validationField}
         msgError={errors.goals}
       />
 
       <TextareaNes
         content="Descrição:"
         name="description"
-        value={value.description}
+        value={values.description}
         onChange={handleChange}
+        onBlur={validationField}
         msgError={errors.description}
       />
 
-      <ButtonNes as="button">Enviar</ButtonNes>
+      <ButtonNes as="button" type="submit">
+        Enviar
+      </ButtonNes>
     </FormNes>
   );
-};
+}
 
 export default FormLive;

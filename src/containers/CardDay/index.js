@@ -13,7 +13,9 @@ const CardDay = ({ uiid, date, photo, title }) => (
     </Figure>
 
     <Menu>
-      <ButtonNes share>Compartilhar</ButtonNes>
+      <ButtonNes share as="a">
+        Compartilhar
+      </ButtonNes>
       <ButtonNes to={`/lives/${uiid}`}>Detalhes</ButtonNes>
     </Menu>
   </Card>

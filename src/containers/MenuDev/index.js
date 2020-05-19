@@ -34,8 +34,10 @@ const MenuDev = () => {
       <Navigation onClick={changeMenu} active={menuActive}>
         <Close />
         <Buttons>
-          <Action to="/lives">Lives</Action>
+          <Action to="/lives">Agenda</Action>
+          <Action to="/projects">Posts</Action>
           <Action to="/projects">Projetos</Action>
+          <Action to="/">Sobre</Action>
         </Buttons>
 
         <Medias>

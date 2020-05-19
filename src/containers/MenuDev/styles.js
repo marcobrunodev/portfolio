@@ -10,7 +10,8 @@ const Action = styled(ButtonNes)`
   margin-bottom: var(--gap-small);
 
   @media (min-width: 500px) {
-    margin: 0 var(--gap-smaller) var(--gap-smaller);
+    margin: 0 var(--gap-smaller) var(--gap-small);
+    width: calc(50% - var(--gap-smaller) * 2);
   }
 `;
 
@@ -34,6 +35,7 @@ const Icon = styled.img.attrs({ src: menu })`
 const Buttons = styled.div`
   @media (min-width: 500px) {
     display: flex;
+    flex-wrap: wrap;
   }
 `;
 
