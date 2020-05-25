@@ -27,7 +27,7 @@ TextareaNes.propTypes = {
   name: PropTypes.string.isRequired,
   placeholder: PropTypes.string,
   content: PropTypes.string.isRequired,
-  msgError: PropTypes.string,
+  msgError: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]),
   onChange: PropTypes.func.isRequired,
   value: PropTypes.string.isRequired,
 };

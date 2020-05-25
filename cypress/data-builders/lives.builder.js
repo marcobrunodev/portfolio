@@ -29,12 +29,13 @@ const randomLiveInfo = (options = {}) => {
   return Object.assign(
     blank,
     {
-      titleShort: faker.lorem.sentence(2, 3),
-      title: faker.lorem.sentence(5, 10),
+      shortTitle: faker.lorem.sentence(2, 3),
+      title: faker.lorem.sentence(4),
       photo: faker.image.city(200, 200, true),
       start: generatorDate(),
       finish: generatorDate(2),
       goals: generatorGoals(),
+      shortDescription: faker.lorem.sentence(10),
       description: faker.lorem.sentence(20, 40),
     },
     { ...options }

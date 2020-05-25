@@ -14,32 +14,47 @@ function FormLive() {
   const { values, handleChange, handleSubmit, errors, validationField } = useValidation(
     validation,
     newLive,
-    'titleShort',
+    'shortTitle',
     'title',
-    'photo',
     'startDate',
     'startTime',
     'finishDate',
     'finishTime',
     'goals',
+    'shortDescription',
     'description'
   );
 
   function newLive(live) {
-    history.push('/lives');
+    const [startYear, startMonth, startDay] = live.startDate.split('-');
+    const [startHour, startMinute] = live.startTime.split(':');
+    const [finishYear, finishMonth, finishDay] = live.finishDate.split('-');
+    const [finishHour, finishMinute] = live.finishTime.split(':');
+    const startDate = new Date(startYear, startMonth, startDay, startHour, startMinute);
+    const finishDate = new Date(finishYear, finishMonth, finishDay, finishHour, finishMinute);
+    const newStream = { ...live, startDate, finishDate };
 
-    // service.create(live);
+    service
+      .create(newStream)
+      .then(() => {
+        console.log('EITA!!!!');
+        history.push('/lives');
+      })
+      .catch((err) => {
+        console.log('ERRORS', err);
+        console.log('body', err.response.data);
+      });
   }
 
   return (
     <FormNes onSubmit={handleSubmit}>
       <FieldNes
         content="Título curto:"
-        name="titleShort"
-        value={values.titleShort}
+        name="shortTitle"
+        value={values.shortTitle}
         onChange={handleChange}
         onBlur={validationField}
-        msgError={errors.titleShort}
+        msgError={errors.shortTitle}
       />
 
       <FieldNes
@@ -49,16 +64,6 @@ function FormLive() {
         onChange={handleChange}
         onBlur={validationField}
         msgError={errors.title}
-      />
-
-      <FieldNes
-        content="Imagem:"
-        name="photo"
-        type="file"
-        value={values.photo}
-        onChange={handleChange}
-        onBlur={validationField}
-        msgError={errors.photo}
       />
 
       <Half>
@@ -111,6 +116,15 @@ function FormLive() {
         onChange={handleChange}
         onBlur={validationField}
         msgError={errors.goals}
+      />
+
+      <TextareaNes
+        content="Descrição curta:"
+        name="shortDescription"
+        value={values.shortDescription}
+        onChange={handleChange}
+        onBlur={validationField}
+        msgError={errors.shortDescription}
       />
 
       <TextareaNes

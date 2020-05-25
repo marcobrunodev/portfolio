@@ -5,7 +5,7 @@ import FormLive from '../../containers/FormLive';
 
 const LiveNew = () => (
   <Template>
-    <TitleNes>Casdastro de nova Live</TitleNes>
+    <TitleNes>Cadastro de nova Live</TitleNes>
 
     <FormLive />
   </Template>

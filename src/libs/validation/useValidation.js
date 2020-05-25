@@ -35,6 +35,14 @@ function useValidation(validation = false, callback, ...names) {
   }
 
   function sendFormIsValid() {
+    console.log('Conteudo do errors', errors);
+    console.log('Qtd length error', Object.values(errors).filter((error) => error).length);
+    console.log('form enviado?', isSubmitting);
+
+    console.log(
+      'Erro do if',
+      Object.values(errors).filter((error) => error).length === 0 && isSubmitting
+    );
     if (Object.values(errors).filter((error) => error).length === 0 && isSubmitting) {
       callback(values);
     }

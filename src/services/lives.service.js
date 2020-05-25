@@ -1,14 +1,7 @@
 import api from './axios';
 
 function create(live) {
-  api
-    .post('/lives/', live)
-    .then(() => {
-      console.log('BOM');
-    })
-    .catch(() => {
-      console.log('RUIM');
-    });
+  return api.post('/lives/', live);
 }
 
 function findAll() {
