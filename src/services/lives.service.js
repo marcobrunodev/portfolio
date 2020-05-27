@@ -4,8 +4,8 @@ function create(live) {
   return api.post('/lives/', live);
 }
 
-function findAll() {
-  console.log('findAll');
+function findAllToSchedule() {
+  return api.get('/lives/schedule');
 }
 
-export default { findAll, create };
+export default { findAllToSchedule, create };

@@ -1,59 +1,80 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { utcToZonedTime, format } from 'date-fns-tz';
 import Template from '../Template';
 import ContainerDev from '../../containers/ContainerDev';
 import TitleNes from '../../components/TitleNes';
 import CardDay from '../../containers/CardDay';
 import WrapperCard from '../../containers/WrapperCard';
-import cursoFrontEnd from '../../img/cursoFrontEnd.png';
 import PlusButton from '../../components/PlusButton';
+import service from '../../services/lives.service';
 
-const lives = [
-  {
-    uiid: 1,
-    title: 'Curso de FrontEnd #08',
-    date: '28/04/2020',
-    photo: cursoFrontEnd,
-  },
-  {
-    uiid: 2,
-    title: 'Curso de FrontEnd #09',
-    date: '29/04/2020',
-    photo: cursoFrontEnd,
-  },
-  {
-    uiid: 3,
-    title: 'Curso de FrontEnd #10',
-    date: '30/04/2020',
-    photo: cursoFrontEnd,
-  },
-  {
-    uiid: 4,
-    title: 'Curso de FrontEnd #11',
-    date: '01/05/2020',
-    photo: cursoFrontEnd,
-  },
-  {
-    uiid: 5,
-    title: 'Curso de FrontEnd #12',
-    date: '02/05/2020',
-    photo: cursoFrontEnd,
-  },
-];
+const LivesSchedule = () => {
+  const [lives, setLives] = useState([
+    {
+      uiid: 'a0',
+      startDate: '',
+      shortTitle: 'loading...',
+      shortDescription: 'loading também...',
+    },
+    {
+      uiid: 'a1',
+      startDate: '',
+      shortTitle: 'loading...',
+      shortDescription: 'loading também...',
+    },
+    {
+      uiid: 'a2',
+      startDate: '',
+      shortTitle: 'loading...',
+      shortDescription: 'loading também...',
+    },
+  ]);
+  const [shimmerEffect, setShimmerEffect] = useState(true);
+  const { timeZone } = new Intl.DateTimeFormat().resolvedOptions();
 
-const LivesSchedule = () => (
-  <Template>
-    <ContainerDev>
-      <TitleNes>Agenda das Lives</TitleNes>
+  const formatDate = (date) => {
+    const dateStartLocal = utcToZonedTime(new Date(date), timeZone);
+    const formtDateStartLocal = format(dateStartLocal, 'dd/MM/yyyy');
 
-      <WrapperCard>
-        {lives.map(({ uiid, title, date, photo }) => (
-          <CardDay uiid={uiid} key={uiid} title={title} date={date} photo={photo} />
-        ))}
-      </WrapperCard>
+    return formtDateStartLocal;
+  };
 
-      <PlusButton />
-    </ContainerDev>
-  </Template>
-);
+  useEffect(() => {
+    service
+      .findAllToSchedule()
+      .then(({ data }) => {
+        const newLives = data.map((live) => ({ ...live, startDate: formatDate(live.startDate) }));
+
+        setLives(newLives);
+        setShimmerEffect(false);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  return (
+    <Template>
+      <ContainerDev>
+        <TitleNes>Agenda das Lives</TitleNes>
+
+        <WrapperCard>
+          {lives.map(({ uuid, shortTitle, startDate, shortDescription }) => (
+            <CardDay
+              uuid={uuid}
+              key={uuid}
+              shortTitle={shortTitle}
+              startDate={startDate}
+              shortDescription={shortDescription}
+              shimmerEffect={shimmerEffect}
+            />
+          ))}
+        </WrapperCard>
+
+        <PlusButton />
+      </ContainerDev>
+    </Template>
+  );
+};
 
 export default LivesSchedule;
