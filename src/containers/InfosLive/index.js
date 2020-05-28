@@ -2,18 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CardDescription from '../CardDescription';
 import CardInfo from '../CardInfo';
-import PhotoLive from '../../components/PhotoLive';
 import { Wrapper, Infos, Navigation } from './styles';
 import CardGuest from '../CardGuest';
 import ButtonNes from '../../components/ButtonNes';
 
 const InfosLive = (props) => {
-  const { photo, altPhoto, goals, description, day, hour, guest } = props;
+  const { goals, description, day, hour, guest } = props;
 
   return (
     <Wrapper>
-      <PhotoLive src={photo} alt={altPhoto} />
-
       <Infos>
         <CardInfo label="Horário" items={[day, hour]} />
         {guest && <CardGuest name={guest.name} photo={guest.photo} />}

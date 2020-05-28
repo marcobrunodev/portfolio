@@ -11,19 +11,19 @@ import service from '../../services/lives.service';
 const LivesSchedule = () => {
   const [lives, setLives] = useState([
     {
-      uiid: 'a0',
+      uuid: 'a0',
       startDate: '',
       shortTitle: 'loading...',
       shortDescription: 'loading também...',
     },
     {
-      uiid: 'a1',
+      uuid: 'a1',
       startDate: '',
       shortTitle: 'loading...',
       shortDescription: 'loading também...',
     },
     {
-      uiid: 'a2',
+      uuid: 'a2',
       startDate: '',
       shortTitle: 'loading...',
       shortDescription: 'loading também...',
@@ -41,7 +41,7 @@ const LivesSchedule = () => {
 
   useEffect(() => {
     service
-      .findAllToSchedule()
+      .findLivesFuture()
       .then(({ data }) => {
         const newLives = data.map((live) => ({ ...live, startDate: formatDate(live.startDate) }));
 

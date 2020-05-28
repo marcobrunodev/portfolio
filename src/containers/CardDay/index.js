@@ -24,10 +24,10 @@ CardDay.defaultProps = {
 };
 
 CardDay.propTypes = {
-  uiid: PropTypes.number.isRequired,
-  date: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  uuid: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  shortDescription: PropTypes.string.isRequired,
+  shortTitle: PropTypes.string.isRequired,
   shimmerEffect: PropTypes.bool,
 };
 
