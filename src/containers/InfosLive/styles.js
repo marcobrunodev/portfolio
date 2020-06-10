@@ -35,6 +35,8 @@ const Infos = styled.div`
 
   & > ${Card} {
     margin-bottom: var(--gap-medium);
+    text-align: center;
+    line-height: 1.4;
   }
 
   & > ${Guest} {

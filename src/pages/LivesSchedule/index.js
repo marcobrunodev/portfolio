@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { utcToZonedTime, format } from 'date-fns-tz';
 import Template from '../Template';
 import ContainerDev from '../../containers/ContainerDev';
 import TitleNes from '../../components/TitleNes';
@@ -7,6 +6,7 @@ import CardDay from '../../containers/CardDay';
 import WrapperCard from '../../containers/WrapperCard';
 import PlusButton from '../../components/PlusButton';
 import service from '../../services/lives.service';
+import { formatDate } from '../../libs/date';
 
 const LivesSchedule = () => {
   const [lives, setLives] = useState([
@@ -30,14 +30,6 @@ const LivesSchedule = () => {
     },
   ]);
   const [shimmerEffect, setShimmerEffect] = useState(true);
-  const { timeZone } = new Intl.DateTimeFormat().resolvedOptions();
-
-  const formatDate = (date) => {
-    const dateStartLocal = utcToZonedTime(new Date(date), timeZone);
-    const formtDateStartLocal = format(dateStartLocal, 'dd/MM/yyyy');
-
-    return formtDateStartLocal;
-  };
 
   useEffect(() => {
     service

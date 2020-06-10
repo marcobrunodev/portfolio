@@ -22,7 +22,9 @@ const InfosLive = (props) => {
           </CardDescription>
 
           <ButtonNes share>Compartilhar</ButtonNes>
-          <ButtonNes href="https://twitch.tv/marcobrunodev">Assistir!</ButtonNes>
+          <ButtonNes target="_blank" as="a" href="https://twitch.tv/marcobrunodev">
+            Assistir!
+          </ButtonNes>
         </Navigation>
       </Infos>
     </Wrapper>
