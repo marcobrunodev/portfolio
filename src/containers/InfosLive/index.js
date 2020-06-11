@@ -7,17 +7,17 @@ import CardGuest from '../CardGuest';
 import ButtonNes from '../../components/ButtonNes';
 
 const InfosLive = (props) => {
-  const { goals, description, day, hour, guest } = props;
+  const { goals, description, day, hour, guest, shimmerEffect } = props;
 
   return (
     <Wrapper>
-      <Infos>
-        <CardInfo label="Horário" items={[day, hour]} />
+      <Infos shimmerEffect={shimmerEffect}>
+        <CardInfo label="Horário" items={[day, hour]} shimmerEffect={shimmerEffect} />
         {guest && <CardGuest name={guest.name} photo={guest.photo} />}
-        <CardInfo label="Objetivo" items={goals} />
+        <CardInfo label="Objetivo" items={goals} shimmerEffect={shimmerEffect} />
 
         <Navigation>
-          <CardDescription>
+          <CardDescription shimmerEffect={shimmerEffect}>
             <p>{description}</p>
           </CardDescription>
 
@@ -32,8 +32,6 @@ const InfosLive = (props) => {
 };
 
 InfosLive.propTypes = {
-  photo: PropTypes.string.isRequired,
-  altPhoto: PropTypes.string.isRequired,
   goals: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.string.isRequired,
   day: PropTypes.string.isRequired,

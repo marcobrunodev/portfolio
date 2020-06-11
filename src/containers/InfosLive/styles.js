@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PhotoLive from '../../components/PhotoLive';
 import { Card } from '../CardInfo/styles';
 import CardDescription from '../CardDescription';
@@ -63,6 +63,12 @@ const Infos = styled.div`
       order: 0;
     }
   }
+
+  ${({ shimmerEffect }) =>
+    shimmerEffect &&
+    css`
+      filter: blur(2px);
+    `}
 `;
 
 export { Wrapper, Infos, Navigation };

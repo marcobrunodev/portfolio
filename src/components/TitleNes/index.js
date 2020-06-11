@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const TitleNes = styled.h1`
   display: flex;
@@ -15,6 +15,12 @@ const TitleNes = styled.h1`
     font-size: var(--size-bigger);
     padding-top: var(--gap-bigger);
   }
+
+  ${({ shimmerEffect }) =>
+    shimmerEffect &&
+    css`
+      filter: blur(2px);
+    `}
 `;
 
 export default TitleNes;

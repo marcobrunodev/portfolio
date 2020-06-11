@@ -7,16 +7,13 @@ import { formatDate, getHour } from '../../libs/date';
 
 const LiveDetails = () => {
   const [live, setLive] = useState({
-    title: 'twitch.tv/marcobrunodev',
-    goals: ['- Clip-path', '- efeitos 3D', '- CSS Generativo'],
-    day: '15/05/2020',
-    hour: '10:10 até 12:10',
-    description: `Se está começando seus estudos de #CSS, essa é uma ótima oportunidade de
-    estudar e também criar a sua página pessoal e já ter algo para aprensentar na sua próxima entrevista
-    de emprego. Serão 5 dias de conteúdo feitos pela Vanessa Tonini e a Juliana Amoasei e durante a live
-    vou aprender com elas e fazer os execícios junto com vocês. Chega mais e bora criar um grupo de
-    estudo`,
+    title: 'Carregando título feliz...',
+    goals: ['- ainda não sei', '- o que', '- vai acontecer'],
+    day: '00/00/0001',
+    hour: 'AA:BB até CC:KK',
+    description: `Lorem da galera...`,
   });
+  const [shimmerEffect, setShimmerEffect] = useState(true);
   const { title, goals, day, hour, description, guest } = live;
 
   useEffect(() => {
@@ -32,15 +29,23 @@ const LiveDetails = () => {
         };
 
         setLive(dataLive);
+        setShimmerEffect(false);
       })
       .catch(() => {});
   }, []);
 
   return (
     <Template>
-      <TitleNes>{title}</TitleNes>
+      <TitleNes shimmerEffect={shimmerEffect}>{title}</TitleNes>
 
-      <InfosLive goals={goals} day={day} hour={hour} description={description} guest={guest} />
+      <InfosLive
+        shimmerEffect={shimmerEffect}
+        goals={goals}
+        day={day}
+        hour={hour}
+        description={description}
+        guest={guest}
+      />
     </Template>
   );
 };
