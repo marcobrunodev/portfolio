@@ -11,8 +11,8 @@ const CardDay = ({ uuid, startDate, shortTitle, shortDescription, shimmerEffect 
     <Description>{shortDescription}</Description>
 
     <Menu>
-      <ButtonNes share as="a">
-        Compartilhar
+      <ButtonNes share as="a" href="https://twitch.tv/marcobrunodev" target="_blank">
+        Assistir
       </ButtonNes>
       <ButtonNes to={`/lives/${uuid}`}>Detalhes</ButtonNes>
     </Menu>

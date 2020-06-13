@@ -7,7 +7,7 @@ import CardGuest from '../CardGuest';
 import ButtonNes from '../../components/ButtonNes';
 
 const InfosLive = (props) => {
-  const { goals, description, day, hour, guest, shimmerEffect } = props;
+  const { goals, description, day, hour, guest, shimmerEffect, changeActiveShareModal } = props;
 
   return (
     <Wrapper>
@@ -21,7 +21,9 @@ const InfosLive = (props) => {
             <p>{description}</p>
           </CardDescription>
 
-          <ButtonNes share>Compartilhar</ButtonNes>
+          <ButtonNes share onClick={changeActiveShareModal}>
+            Compartilhar
+          </ButtonNes>
           <ButtonNes target="_blank" as="a" href="https://twitch.tv/marcobrunodev">
             Assistir!
           </ButtonNes>
@@ -32,6 +34,7 @@ const InfosLive = (props) => {
 };
 
 InfosLive.propTypes = {
+  shimmerEffect: PropTypes.bool,
   goals: PropTypes.arrayOf(PropTypes.string).isRequired,
   description: PropTypes.string.isRequired,
   day: PropTypes.string.isRequired,
@@ -40,10 +43,12 @@ InfosLive.propTypes = {
     name: PropTypes.string,
     photo: PropTypes.string,
   }),
+  changeActiveShareModal: PropTypes.bool.isRequired,
 };
 
 InfosLive.defaultProps = {
   guest: false,
+  shimmerEffect: true,
 };
 
 export default InfosLive;

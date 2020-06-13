@@ -31,7 +31,8 @@ const Card = styled(ContainerNes)`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  width: 320px;
+  width: 100%;
+  max-width: 320px;
   height: 320px;
 
   & > ${TagNes} {

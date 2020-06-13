@@ -35,7 +35,7 @@ const MenuDev = () => {
         <Close />
         <Buttons>
           <Action to="/lives">Agenda</Action>
-          <Action to="/projects">Posts</Action>
+          <Action to="/posts">Posts</Action>
           <Action to="/projects">Projetos</Action>
           <Action to="/">Sobre</Action>
         </Buttons>

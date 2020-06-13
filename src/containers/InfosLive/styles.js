@@ -6,6 +6,9 @@ import ButtonNes from '../../components/ButtonNes';
 import { Guest } from '../CardGuest/styles';
 
 const Wrapper = styled.article`
+  padding-left: var(--gap-small);
+  padding-right: var(--gap-small);
+
   ${PhotoLive} {
     display: none;
   }

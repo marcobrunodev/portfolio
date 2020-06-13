@@ -6,6 +6,7 @@ import LiveDetail from './pages/LiveDetails';
 import LiveNew from './pages/LiveNew';
 import ProjectsDev from './pages/ProjectsDev';
 import ContactsDev from './pages/ContactsDev';
+import PostsDev from './pages/PostsDev';
 
 const Routes = () => (
   <Router>
@@ -15,6 +16,7 @@ const Routes = () => (
       <Route path="/lives/new" component={LiveNew} />
       <Route path="/lives/:id" component={LiveDetail} />
       <Route path="/projects" component={ProjectsDev} />
+      <Route path="/posts" component={PostsDev} />
       <Route path="/contacts" component={ContactsDev} />
     </Switch>
   </Router>
