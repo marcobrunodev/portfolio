@@ -43,7 +43,6 @@
   "devDependencies": {
     "cypress": "^4.5.0",
     "cypress-file-upload": "4.0.7",
-    "eslint": "^7.2.0",
     "eslint-config-airbnb": "^18.1.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
