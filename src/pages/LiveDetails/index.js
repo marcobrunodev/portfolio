@@ -6,7 +6,6 @@ import Template from '../Template';
 import service from '../../services/lives.service';
 import { formatDate, getHour } from '../../libs/date';
 import ShareSocial from '../../containers/ShareSocial';
-import ButtonShare from '../../components/ButtonShare';
 
 const LiveDetails = () => {
   const [live, setLive] = useState({
@@ -69,20 +68,6 @@ const LiveDetails = () => {
         url={getUrl()}
         active={activeShareModal}
         changeActive={changeActiveShareModal}
-      />
-
-      <ButtonShare
-        config={{
-          params: {
-            title: 'My share',
-            text: 'Check out this amazing react-share-api library',
-            url: 'https://github.com/marcolanaro/react-web-share-api',
-          },
-          /* tslint:disable-next-line:no-console */
-          onShareSuccess: () => console.log('Success'),
-          /* tslint:disable-next-line:no-console */
-          onShareError: (error: Error) => console.log('error', error),
-        }}
       />
     </Template>
   );

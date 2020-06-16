@@ -3,12 +3,33 @@ import ButtonNes from '../ButtonNes';
 
 const isSupported = () => (navigator && navigator.share && true) || false;
 
-const ButtonShare = () => {
-  console.log(navigator.share);
-  console.log(window.navigator);
-  console.log('isSupported', isSupported());
+const shareWithWebApi = (event) => {
+  event.preventDefault();
 
-  return <ButtonNes>Compartilhar futuro</ButtonNes>;
+  navigator
+    .share({
+      title: 'LiveCoding na Twitch',
+      text: 'LiveCoding sobre JavaScript, HTML e CSS',
+      url: 'https://twitch.tv/marcobrunodev',
+    })
+    .then(function () {
+      console.log('Funcionou!!');
+    })
+    .catch(function (err) {
+      console.error(err);
+    });
+};
+
+const ButtonShare = ({ changeActiveShareModal }) => {
+  return isSupported() ? (
+    <ButtonNes as="a" onClick={shareWithWebApi}>
+      Compartilhar
+    </ButtonNes>
+  ) : (
+    <ButtonNes share onClick={changeActiveShareModal}>
+      Compartilhar N
+    </ButtonNes>
+  );
 };
 
 export default ButtonShare;

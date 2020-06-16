@@ -5,6 +5,7 @@ import CardInfo from '../CardInfo';
 import { Wrapper, Infos, Navigation } from './styles';
 import CardGuest from '../CardGuest';
 import ButtonNes from '../../components/ButtonNes';
+import ButtonShare from '../../components/ButtonShare';
 
 const InfosLive = (props) => {
   const { goals, description, day, hour, guest, shimmerEffect, changeActiveShareModal } = props;
@@ -21,9 +22,7 @@ const InfosLive = (props) => {
             <p>{description}</p>
           </CardDescription>
 
-          <ButtonNes share onClick={changeActiveShareModal}>
-            Compartilhar
-          </ButtonNes>
+          <ButtonShare changeActiveShareModal={changeActiveShareModal} />
           <ButtonNes target="_blank" as="a" href="https://twitch.tv/marcobrunodev">
             Assistir!
           </ButtonNes>
