@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ButtonNes from '../ButtonNes';
 
 const isSupported = () => (navigator && navigator.share && true) || false;
@@ -27,9 +28,13 @@ const ButtonShare = ({ changeActiveShareModal }) => {
     </ButtonNes>
   ) : (
     <ButtonNes share onClick={changeActiveShareModal}>
-      Compartilhar N
+      Compartilhar
     </ButtonNes>
   );
+};
+
+ButtonShare.propTypes = {
+  changeActiveShareModal: PropTypes.func.isRequired,
 };
 
 export default ButtonShare;
