@@ -22,7 +22,7 @@ const shareWithWebApi = (event) => {
 
 const ButtonShare = ({ changeActiveShareModal }) => {
   return isSupported() ? (
-    <ButtonNes as="a" onClick={shareWithWebApi}>
+    <ButtonNes share as="a" onClick={shareWithWebApi}>
       Compartilhar
     </ButtonNes>
   ) : (
